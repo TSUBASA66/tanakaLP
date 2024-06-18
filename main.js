@@ -16,3 +16,24 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var r=e(require("./components/forEachPolyfill")),t=e(require("./components/galleryFunc")),o=e(require("./components/header")),n=e(require("./components/slider")),u=e(require("./components/anchorScroll")),a=e(require("./components/ajaxZip")),l=e(require("./components/preloader"));document.addEventListener("DOMContentLoaded",function(){r.default(),u.default(),t.default(),o.default(),n.default(),a.default(),l.default()},!1);
 },{"./components/forEachPolyfill":"Y661","./components/galleryFunc":"ZX03","./components/header":"rCjw","./components/slider":"vQ81","./components/anchorScroll":"jGFF","./components/ajaxZip":"yLAL","./components/preloader":"P7Pl"}]},{},["Rgmk"], null)
 //# sourceMappingURL=/js/index.js.map
+
+$(function(){
+    $(window).on("scroll", function() {
+      if ($(this).scrollTop() > 0 && $('#contact').offset().top - $(this).scrollTop() - $(this).height() > 0) {
+        $('.floating').fadeIn();
+      } else {
+        $('.floating').fadeOut();
+      }
+    });
+  });
+
+  $(function () {
+    $('a[href*="#"]').click(function () {
+      const speed = 400;
+      const target = $(this.hash === '#' || '' ? 'html' : this.hash)
+      if (!target.length) return;
+      const targetPos = target.offset().top - 100;
+      $('html, body').animate({ scrollTop: targetPos }, speed, 'swing');
+      return false;
+    });
+  });

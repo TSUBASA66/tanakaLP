@@ -1465,25 +1465,29 @@ a:hover {
     right: 0;
     background: #000;
     color: #fff;
-    font-size: 2.4rem;
+    /* font-size: max(18px, 1.23vw); */
+        font-size: clamp(18px, 2.23vw, 26px);
     border-radius: 5px 0px 0px 5px;
     top: 50%;
     white-space: normal;
-    height: 300px;
-    width: 100px;
+    height: min(300px, 23vw);
+    width: min(100px, 7.69vw);
     display: grid;
     place-content: center;
     font-weight: bold;
     letter-spacing: .22em;
-
-    
+}
+@media screen and (min-width: 767px) and (max-width: 1300px){
+  .floating{
+    font-size: max(18px, 2vw);
+  }
 }
 @media screen and (max-width: 767px) {
   .floating{
     top: 30%;
-    height: 200px;
-    width: 65px;
     font-size: 1.6rem;
+            height: 180px;
+        width: 50px;
   }
 }
 .header--active + .top .floating{
@@ -1499,11 +1503,21 @@ a:hover {
   display: block;
 }
 .floating .contactimg img{
-  width: 23px;
+      width: clamp(20px, 1.76vw, 33px);
+}
+@media screen and (max-width: 767px) {
+  .floating .contactimg img{
+    width: max(23px, 1.76vw);
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1300px){
+  .floating .contactimg img{
+    width: max(23px, 1.76vw);
+  }
 }
 .floating .txt{
   display: block;
-  margin-top: 15px;
+          margin-top: clamp(10px, 1.15vw, 15px);
 }
 .top__mv {
   position: relative;
