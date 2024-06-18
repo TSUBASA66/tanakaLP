@@ -1465,25 +1465,35 @@ a:hover {
     right: 0;
     background: #000;
     color: #fff;
-    font-size: 1.6rem;
-    border-radius: 5px;
-    top: 70%;
+    font-size: 2.4rem;
+    border-radius: 5px 0px 0px 5px;
+    top: 50%;
     white-space: normal;
-    height: 200px;
-    width: 65px;
+    height: 300px;
+    width: 100px;
     display: grid;
     place-content: center;
     font-weight: bold;
     letter-spacing: .22em;
+
+    
 }
 @media screen and (max-width: 767px) {
   .floating{
     top: 30%;
+    height: 200px;
+    width: 65px;
+    font-size: 1.6rem;
   }
+}
+.header--active + .top .floating{
+  display: none;
+  transition: .5s;
 }
 .floating a{
   display: flex;
   align-items: center;
+  width: inherit;
 }
 .floating .contactimg{
   display: block;

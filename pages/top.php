@@ -4,7 +4,7 @@ get_header();
 
 <div class="top">
   <div class="floating">
-    <a href="#">
+    <a href="#contact">
       <span class="contactimg">
       <img src="<?php echo get_template_directory_uri();?>/src/img/icons/contact.png" alt="お問い合わせ">
       </span>
