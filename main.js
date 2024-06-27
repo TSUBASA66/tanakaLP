@@ -17,15 +17,28 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./components/forEachPolyfill":"Y661","./components/galleryFunc":"ZX03","./components/header":"rCjw","./components/slider":"vQ81","./components/anchorScroll":"jGFF","./components/ajaxZip":"yLAL","./components/preloader":"P7Pl"}]},{},["Rgmk"], null)
 //# sourceMappingURL=/js/index.js.map
 
-$(function(){
-    $(window).on("scroll", function() {
-      if ($(this).scrollTop() > 0 && $('#contact').offset().top - $(this).scrollTop() - $(this).height() > 0) {
+// $(function(){
+//     $(window).on("scroll", function() {
+//       if ($(this).scrollTop() > 0 && $('#contact').offset().top - $(this).scrollTop() - $(this).height() > 0) {
+//         $('.floating').fadeIn();
+//       } else {
+//         $('.floating').fadeOut();
+//       }
+//     });
+//   });
+
+$(document).ready(function() {
+  $(window).on("scroll", function() {
+      // #contact 要素が画面内に入ったかどうかをチェックする
+      if ($('#contact').offset().top - $(window).scrollTop() < $(window).height()) {
+          $('.floating').fadeOut(); // .floating をフェードアウトする
+      }else{
         $('.floating').fadeIn();
-      } else {
-        $('.floating').fadeOut();
       }
-    });
   });
+});
+
+
 
   $(function () {
     $('a[href*="#"]').click(function () {
